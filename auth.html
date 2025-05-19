@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriMarket - Authentication</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet" rel="stylesheet">
+    <link href="C:\Users\rorim\OneDrive\Documents\Eduvos\Eduvos 25\ITECA\AgriMarket\styles.css" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/C:\Users\rorim\OneDrive\Documents\Eduvos\Eduvos 25\ITECA\AgriMarket\index.html" class="text-2xl font-bold text-green-700">AgriMarket</a>
+                </div>
+                
+                <div class="hidden sm:flex sm:space-x-8 items-center">
+                    <a href="/C:\Users\rorim\OneDrive\Documents\Eduvos\Eduvos 25\ITECA\AgriMarket\index.html" class="text-gray-700 hover:text-green-700 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="/C:\Users\rorim\OneDrive\Documents\Eduvos\Eduvos 25\ITECA\AgriMarket\products.html" class="text-gray-700 hover:text-green-700 px-3 py-2 text-sm font-medium">Products</a>
+                    <a href="/C:\Users\rorim\OneDrive\Documents\Eduvos\Eduvos 25\ITECA\AgriMarket\about.html" class="text-gray-700 hover:text-green-700 px-3 py-2 text-sm font-medium">About Us</a>
+                    <a href="/C:\Users\rorim\OneDrive\Documents\Eduvos\Eduvos 25\ITECA\AgriMarket\contact.html" class="text-gray-700 hover:text-green-700 px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="/C:\Users\rorim\OneDrive\Documents\Eduvos\Eduvos 25\ITECA\AgriMarket\auth.html" class="btn btn-primary">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8 bg-cream-light">
+        <div class="container" style="max-width: 480px;">
+            <div class="card">
+                <div class="card-body">
+                    <div id="loginForm">
+                        <h1 class="card-title text-center mb-4">Welcome Back</h1>
+                        
+                        <form class="space-y-4">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-forest"
+                                    required
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-forest"
+                                    required
+                                >
+                            </div>
+                            
+                            <button 
+                                type="submit" 
+                                class="w-full btn btn-primary"
+                            >
+                                Login
+                            </button>
+                        </form>
+                        
+                        <p class="text-center mt-4">
+                            Don't have an account? 
+                            <a href="#" onclick="toggleForms()" class="text-forest font-bold">Sign up</a>
+                        </p>
+                    </div>
+
+                    <div id="registerForm" class="hidden">
+                        <h1 class="card-title text-center mb-4">Create an Account</h1>
+                        
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-forest"
+                                    required
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="reg-email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input 
+                                    type="email" 
+                                    id="reg-email" 
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-forest"
+                                    required
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="reg-password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                                <input 
+                                    type="password" 
+                                    id="reg-password" 
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-forest"
+                                    required
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="role" class="block text-sm font-medium text-gray-700 mb-2">I am a:</label>
+                                <select 
+                                    id="role" 
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-forest"
+                                >
+                                    <option value="buyer">Buyer</option>
+                                    <option value="seller">Seller</option>
+                                </select>
+                            </div>
+                            
+                            <button 
+                                type="submit" 
+                                class="w-full btn btn-primary"
+                            >
+                                Sign Up
+                            </button>
+                        </form>
+                        
+                        <p class="text-center mt-4">
+                            Already have an account? 
+                            <a href="#" onclick="toggleForms()" class="text-forest font-bold">Login</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white mt-auto">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-rows-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">AgriMarket</h3>
+                    <p class="text-sm text-gray-300">
+                        Connecting farmers and consumers for a sustainable future.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="/C:\Users\rorim\OneDrive\Documents\Eduvos\Eduvos 25\ITECA\AgriMarket\about.html" class="text-sm text-gray-300 hover:text-white">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/C:\Users\rorim\OneDrive\Documents\Eduvos\Eduvos 25\ITECA\AgriMarket\products.html" class="text-sm text-gray-300 hover:text-white">
+                                Products
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/C:\Users\rorim\OneDrive\Documents\Eduvos\Eduvos 25\ITECA\AgriMarket\contact.html" class="text-sm text-gray-300 hover:text-white">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <p class="text-sm text-gray-300">
+                        Email: info@agrimarket.com<br />
+                        Phone: (123) 456-7890
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700">
+                <p class="text-center text-sm text-gray-300">
+                    &copy; 2024 AgriMarket. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleForms() {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            loginForm.classList.toggle('hidden');
+            registerForm.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
