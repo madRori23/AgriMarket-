@@ -183,12 +183,31 @@
     </footer>
 
     <script>
-        function toggleForms() {
-            const loginForm = document.getElementById('loginForm');
-            const registerForm = document.getElementById('registerForm');
-            loginForm.classList.toggle('hidden');
-            registerForm.classList.toggle('hidden');
-        }
-    </script>
+        // Simple form handling
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // For demonstration purposes only
+            alert(`Login attempted with: ${email}`);
+            
+            // In a real application, you would send this data to a server
+            // using fetch() or another AJAX method
+            loginUser (email, password);
+        });
+        // Function to handle user login
+        function loginUser (email, password) {
+            // Example of a mock API endpoint
+            const apiEndpoint = 'https://example.com/api/login';
+            // Create the payload
+            const payload = {
+                email: email,
+                password: password
+            };
+        </script>
+
+
+
 </body>
 </html>
