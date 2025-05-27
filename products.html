@@ -13,7 +13,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="/index.html" class="text-2xl font-bold text-green-700">AgriMarket</a>
+                    <a href="/" class="text-2xl font-bold text-green-700">AgriMarket</a>
                 </div>
                 
                 <div class="hidden sm:flex sm:space-x-8 items-center">
@@ -160,5 +160,151 @@
             </div>
         </div>
     </footer>
+     <script>
+        // Sample product data - in a real application this would come from a server
+        const products = [
+            {
+                id: 1,
+                name: "Fresh Tomatoes",
+                price: 20.00,
+                unit: "kg",
+                seller: "Farm Fresh",
+                image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=600&q=80",
+                category: "vegetables"
+            },
+            {
+                id: 2,
+                name: "Organic Carrots",
+                price: 15.00,
+                unit: "kg",
+                seller: "Organic Gardens",
+                image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=600&q=80",
+                category: "vegetables"
+            },
+            {
+                id: 3,
+                name: "Fresh Apples",
+                price: 25.00,
+                unit: "kg",
+                seller: "Apple Orchard",
+                image: "https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?auto=format&fit=crop&w=600&q=80",
+                category: "fruits"
+            },
+            {
+                id: 4,
+                name: "Green Peppers",
+                price: 18.50,
+                unit: "kg",
+                seller: "Farm Fresh",
+                image: "https://images.unsplash.com/photo-1518977822534-7049a61ee0c2?auto=format&fit=crop&w=600&q=80",
+                category: "vegetables"
+            },
+            {
+                id: 5,
+                name: "Bananas",
+                price: 12.00,
+                unit: "kg",
+                seller: "Tropical Farms",
+                image: "https://images.unsplash.com/photo-1543218024-57a70143c369?auto=format&fit=crop&w=600&q=80",
+                category: "fruits"
+            },
+            {
+                id: 6,
+                name: "Fresh Potatoes",
+                price: 10.00,
+                unit: "kg",
+                seller: "Root Vegetables Co.",
+                image: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=600&q=80",
+                category: "vegetables"
+            }
+        ];
+
+        // Function to create product cards
+        function renderProducts() {
+            const container = document.getElementById('productsContainer');
+            container.innerHTML = '';
+            
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'card';
+                productCard.innerHTML = `
+                    <div class="card-header">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">${product.name}</h3>
+                        <p class="card-price">R${product.price.toFixed(2)} per ${product.unit}</p>
+                        <p class="text-gray-600">Seller: ${product.seller}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button onclick="addToCart(${product.id})" class="btn btn-primary w-full">Add to Cart</button>
+                    </div>
+                `;
+                container.appendChild(productCard);
+            });
+        }
+
+        // Initialize cart
+        let cart = [];
+
+        // Add to cart
+        
+        // Add to cart function
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                cart.push(product);
+                alert(`${product.name} has been added to your cart.`);
+                updateCartCount();
+            }
+        }
+
+        
+        // Function to update cart count display
+        function updateCartCount() {
+            const cartCountElement = document.getElementById('cartCount');
+            cartCountElement.textContent = cart.length;
+        }
+
+        
+        // Function to display cart items
+        function displayCart() {
+            const cartContainer = document.getElementById('cartContainer');
+            cartContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+                return;
+            }
+
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <h4>${item.name}</h4>
+                    <p>Price: R${item.price.toFixed(2)} per ${item.unit}</p>
+                `;
+                cartContainer.appendChild(cartItem);
+            });
+        }
+
+        
+        // Function to clear the cart
+        function clearCart() {
+            cart = [];
+            updateCartCount();
+            displayCart();
+            alert('Your cart has been cleared.');
+        }
+
+        
+        // Initial rendering of products
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            updateCartCount();
+        });
+     </script>
+
+
 </body>
 </html>
