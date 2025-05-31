@@ -1,6 +1,6 @@
 <?php
 // Database configuration
-$host = "localhost";
+$host = "mongodb://localhost:27017";
 $dbname = "agrimarket";
 $username = "root";
 $password = ""; // Enter your MySQL password here
