@@ -1,6 +1,6 @@
 
 <?php
-require_once 'includes/config.php';
+require_once 'config.php';
 
 // Clear all session variables
 $_SESSION = array();
