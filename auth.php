@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'config.php';
 
 // Database configuration
 $host = 'localhost';
