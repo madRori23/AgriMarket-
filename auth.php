@@ -3,7 +3,7 @@ require_once '/config.php';
 
 // Redirect if already logged in
 if (isLoggedIn()) {
-    header("Location: index.php");
+    header("Location: index.html");
     exit;
 }
 
@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $registerMode) {
 }
 ?>
 
-<?php require_once 'includes/header.php'; ?>
+<?php require_once '/header.php'; ?>
 
 <main class="main">
     <div class="container" style="max-width: 480px;">
@@ -172,4 +172,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $registerMode) {
     </div>
 </main>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once '/footer.php'; ?>
