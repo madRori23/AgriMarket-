@@ -1,5 +1,5 @@
 
-<?php require_once 'includes/header.php'; ?>
+<?php require_once '/header.php'; ?>
 
 <section class="hero">
     <div class="container">
