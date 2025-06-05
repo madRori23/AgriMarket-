@@ -4,9 +4,9 @@ require_once 'config.php';
 
 // Database configuration
 $host = 'localhost';
-$dbname = 'agrimarket';
+$dbname = 'market';
 $username = 'root';
-$password = '';
+$password = 'mysql';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
