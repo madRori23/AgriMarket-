@@ -1,12 +1,12 @@
 <?php
 session_start();
-require_once 'config.php';
+
 
 // Database configuration
 $host = 'localhost';
-$dbname = 'market';
-$username = 'root';
-$password = 'mysql';
+$dbname = 'agrimar3_agrimarket';
+$username = 'agrimar3_agrimarket';
+$password = 'wBTLErvFvT5Lg4D2Y8GV';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
