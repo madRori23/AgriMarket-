@@ -9,9 +9,9 @@ if (!isset($_SESSION['user_id'])) {
 
 // Database configuration (should be in a separate config file)
 $host = 'localhost';
-$dbname = 'market';
-$username = 'root';
-$password = 'mysql';
+$dbname = 'agrimar3_agrimarket';
+$username = 'agrimar3_agrimarket';
+$password = 'wBTLErvFvT5Lg4D2Y8GV';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
